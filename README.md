@@ -1,81 +1,42 @@
-# Support-vector-Machine
-Car Evaluation Data Set - non linear equation
+Support Vector Machine Algorithm
 
-About Dataset
+Support Vector Machine or SVM is one of the most popular Supervised Learning algorithms, which is used for Classification as well as Regression problems. However, primarily, it is used for Classification problems in Machine Learning.
 
+The goal of the SVM algorithm is to create the best line or decision boundary that can segregate n-dimensional space into classes so that we can easily put the new data point in the correct category in the future. This best decision boundary is called a hyperplane.
 
-Title: Car Evaluation Database
+SVM chooses the extreme points/vectors that help in creating the hyperplane. These extreme cases are called as support vectors, and hence algorithm is termed as Support Vector Machine. Consider the below diagram in which there are two different categories that are classified using a decision boundary or hyperplane
 
-Sources:
-(a) Creator: Marko Bohanec
-(b) Donors: Marko Bohanec (marko.bohanec@ijs.si)
-Blaz Zupan (blaz.zupan@ijs.si)
-(c) Date: June, 1997
+Types of SVM
 
-Past Usage:
+SVM can be of two types:
 
-The hierarchical decision model, from which this dataset is
-derived, was first presented in
+Linear SVM: Linear SVM is used for linearly separable data, which means if a dataset can be classified into two classes by using a single straight line, then such data is termed as linearly separable data, and classifier is used called as Linear SVM classifier.
 
-M. Bohanec and V. Rajkovic: Knowledge acquisition and explanation for
-multi-attribute decision making. In 8th Intl Workshop on Expert
-Systems and their Applications, Avignon, France. pages 59-78, 1988.
+Non-linear SVM: Non-Linear SVM is used for non-linearly separated data, which means if a dataset cannot be classified by using a straight line, then such data is termed as non-linear data and classifier used is called as Non-linear SVM classifier.
 
-Within machine-learning, this dataset was used for the evaluation
-of HINT (Hierarchy INduction Tool), which was proved to be able to
-completely reconstruct the original hierarchical model. This,
-together with a comparison with C4.5, is presented in
+Hyperplane and Support Vectors in the SVM algorithm:
 
-B. Zupan, M. Bohanec, I. Bratko, J. Demsar: Machine learning by
-function decomposition. ICML-97, Nashville, TN. 1997 (to appear)
+Hyperplane: There can be multiple lines/decision boundaries to segregate the classes in n-dimensional space, but we need to find out the best decision boundary that helps to classify the data points. This best boundary is known as the hyperplane of SVM.
 
-Relevant Information Paragraph:
+The dimensions of the hyperplane depend on the features present in the dataset, which means if there are 2 features (as shown in image), then hyperplane will be a straight line. And if there are 3 features, then hyperplane will be a 2-dimension plane.
 
-Car Evaluation Database was derived from a simple hierarchical
-decision model originally developed for the demonstration of DEX
-(M. Bohanec, V. Rajkovic: Expert system for decision
-making. Sistemica 1(1), pp. 145-157, 1990.). The model evaluates
-cars according to the following concept structure:
+Support Vectors:
 
-CAR car acceptability
-. PRICE overall price
-. . buying buying price
-. . maint price of the maintenance
-. TECH technical characteristics
-. . COMFORT comfort
-. . . doors number of doors
-. . . persons capacity in terms of persons to carry
-. . . lug_boot the size of luggage boot
-. . safety estimated safety of the car
+The data points or vectors that are the closest to the hyperplane and which affect the position of the hyperplane are termed as Support Vector. Since these vectors support the hyperplane, hence called a Support vector.
 
-Input attributes are printed in lowercase. Besides the target
-concept (CAR), the model includes three intermediate concepts:
-PRICE, TECH, COMFORT. Every concept is in the original model
-related to its lower level descendants by a set of examples (for
-these examples sets see http://www-ai.ijs.si/BlazZupan/car.html).
+How does SVM works?
 
-The Car Evaluation Database contains examples with the structural
-information removed, i.e., directly relates CAR to the six input
-attributes: buying, maint, doors, persons, lug_boot, safety.
+Linear SVM:
 
-Because of known underlying concept structure, this database may be
-particularly useful for testing constructive induction and
-structure discovery methods.
+The working of the SVM algorithm can be understood by using an example. Suppose we have a dataset that has two tags (green and blue), and the dataset has two features x1 and x2. We want a classifier that can classify the pair(x1, x2) of coordinates in either green or blue
 
-Number of Instances: 1728
-(instances completely cover the attribute space)
+So as it is 2-d space so by just using a straight line, we can easily separate these two classes. But there can be multiple lines that can separate these classes.
 
-Number of Attributes: 6
+Hence, the SVM algorithm helps to find the best line or decision boundary; this best boundary or region is called as a hyperplane. SVM algorithm finds the closest point of the lines from both the classes. These points are called support vectors. The distance between the vectors and the hyperplane is called as margin. And the goal of SVM is to maximize this margin. The hyperplane with maximum margin is called the optimal hyperplane.
 
-Attribute Values:
+Non-Linear SVM:
 
-buying v-high, high, med, low
-maint v-high, high, med, low
-doors 2, 3, 4, 5-more
-persons 2, 4, more
-lug_boot small, med, big
-safety low, med, high
+If data is linearly arranged, then we can separate it by using a straight line, but for non-linear data, we cannot draw a single straight line.
 
-Missing Attribute Values: none
-
-Class Distribution (number of instances per class)
+So to separate these data points, we need to add one more dimension. For linear data, we have used two dimensions x and y, so for non-linear data, we will add a third dimension z.
+z=x2 +y2
